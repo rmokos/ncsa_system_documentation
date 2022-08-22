@@ -1,22 +1,10 @@
-Welcome to Lumache's documentation!
+NCSA System Documentation Hub
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+.. warning::
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+   This page is just being built.  Anything linked from this page *is* indeed official NCSA documentation for that system, but this page (the index) is just being created as of August 22, 2022.  When this becomes more stable and points to all NCSA documentation, this notice will be removed.
+   
+NCSA Computer Systems Documentation:
 
-.. note::
-
-   This project is under active development.
-
-Contents
---------
-
-.. toctree::
-
-   usage
-   api
+- `Nightingale computational system <https://ncsa-nightingale.readthedocs-hosted.com>`_ in the Health Enclave (ACHE)
