@@ -2,12 +2,14 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'NCSA System Documentation Hub'
+copyright = '2022'
+author = 'University of Illinois'
 
-release = '0.1'
-version = '0.1.0'
+.. 
+    
+    release = '0.1'
+    version = '0.1.0'
 
 # -- General configuration
 
