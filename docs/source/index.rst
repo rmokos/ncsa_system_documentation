@@ -7,4 +7,4 @@ NCSA System Documentation Hub
    
 NCSA Computer Systems Documentation:
 
-- `Nightingale computational system <https://ncsa-nightingale.readthedocs-hosted.com>`_ in the Health Enclave (ACHE)
+- `Nightingale computational system <https://ncsa-nightingale.readthedocs-hosted.com>`_ in the Health Enclave (ACHE).  
