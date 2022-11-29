@@ -22,6 +22,9 @@ Documentation not specific to any system.
 
    slurm/index
    acl/index
+   Boto3python/index
+   debugging/index
+   libraries/index
    
 Legacy Applications
 -----------------------
