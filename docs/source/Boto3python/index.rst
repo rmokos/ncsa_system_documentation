@@ -50,21 +50,21 @@ of I), go to the IAM Dashboard:
 
 Under "IAM resources," click Users:
 
-.. image:: https://wiki.ncsa.illinois.edu/download/attachments/152044649/Step%202%20-%20Select%20Users.png?version=1&modificationDate=1626364741331&api=v2
+.. image:: boto_step2.png
 
 Select "Add users":
 
-.. image:: https://wiki.ncsa.illinois.edu/download/attachments/152044649/Step%203%20-%20Add%20User.png?version=1&modificationDate=1626364758544&api=v2
+.. image:: boto_step3.png
 
 Choose a user name and set access type to "Programmatic access"; click
 "Next: Permissions":
 
-.. image:: https://wiki.ncsa.illinois.edu/download/attachments/152044649/Step%204%20-%20User%20Details.png?version=1&modificationDate=1626364777595&api=v2
+.. image:: boto_step4.png
 
 On the "Set permissions" screen, select "Attach existing policies
 directly" and choose "AmazonS3FullAccess"; click "Next: Tags":
 
-.. image:: https://wiki.ncsa.illinois.edu/download/attachments/152044649/Step%205%20-%20Permissions.png?version=1&modificationDate=1626364785877&api=v2
+.. image:: boto_step5.png
 
 On the next screen, there's no need to do anything with tags, so just
 click "Next: Review."
@@ -75,7 +75,7 @@ There's also nothing you need to do on the Review screen, so just click
 At the end of the user creation process, it gives you an "Access key ID"
 and "Secret access key"; save these:
 
-.. image:: https://wiki.ncsa.illinois.edu/download/attachments/152044649/Step%206%20-%20Download%20Keys.png?version=1&modificationDate=1626364786141&api=v2
+.. image:: boto_step6.png
 
 If you have an admin account, you can also create user instances for
 other group members who need access.
