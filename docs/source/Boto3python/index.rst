@@ -46,7 +46,7 @@ After logging in (use
 `https://aws.illinois.edu <https://aws.illinois.edu/>`__ if you're at U
 of I), go to the IAM Dashboard:
 
-.. image:: ./Step%201%20-%20Select%20IAM.png
+.. image:: Step%201%20-%20Select%20IAM.png
 
 Under "IAM resources," click Users:
 
