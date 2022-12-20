@@ -13,8 +13,8 @@ For those at the University of Illinois, here are a couple useful links:
 | Illinois AWS resources (Tech Services page):
   https://answers.uillinois.edu/illinois/search.php?q=AWS
 
-**Important note: you will need access to the**\ `Hydro
-cluster <https://bluewaters.ncsa.illinois.edu/hydro>`__\ **to use Boto3.
+**Important note: you will need access to the **\ `Hydro
+cluster <https://bluewaters.ncsa.illinois.edu/hydro>`__\ ** to use Boto3.
 There are issues with installing it on Blue Waters.**
 
 Obtain AWS Account
@@ -145,23 +145,21 @@ Here are some example python scripts for interacting with AWS:
 
 Usage: ./bucket_list.py
 
-+-----------------------------------------------------------------------+
-| ::                                                                    |
-|                                                                       |
-|    #!/usr/bin/env python                                              |
-|                                                                       |
-|    # from https://                                                    |
-| boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html |
-|                                                                       |
-|    import boto3                                                       |
-|                                                                       |
-|    # Let's use Amazon S3                                              |
-|    s3 = boto3.resource('s3')                                          |
-|                                                                       |
-|    # Print out bucket names                                           |
-|    for bucket in s3.buckets.all():                                    |
-|        print(bucket.name)                                             |
-+-----------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| ::                                                                                      |
+|                                                                                         |
+|    #!/usr/bin/env python                                                                |
+|                                                                                         |
+|    # from https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html |
+|    import boto3                                                                         |
+|                                                                                         |
+|    # Let's use Amazon S3                                                                |
+|    s3 = boto3.resource('s3')                                                            |
+|                                                                                         |
+|    # Print out bucket names                                                             |
+|    for bucket in s3.buckets.all():                                                      |
+|        print(bucket.name)                                                               |
++-----------------------------------------------------------------------------------------+
 
 **upload_file.py - upload a file to a bucket**
 ----------------------------------------------
@@ -170,56 +168,53 @@ Usage: ./bucket_list.py
 | Be sure to set default_bucket in the script to the name of the bucket
   that you want to be your default.
 
-+-----------------------------------------------------------------------+
-| ::                                                                    |
-|                                                                       |
-|    #!/usr/bin/env python                                              |
-|                                                                       |
-|    # Usage: ./upload_file file_name [bucket_name]                     |
-|                                                                       |
-|    # from https://boto3.am                                            |
-| azonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html |
-|                                                                       |
-|    default_bucket = 'uiuc-ncsa-bluewaters-rmokos-test'                |
-|                                                                       |
-|    import sys                                                         |
-|    import logging                                                     |
-|    import boto3                                                       |
-|    from botocore.exceptions import ClientError                        |
-|                                                                       |
-|    def upload_file(file_name, bucket, object_name=None):              |
-|        """                                                            |
-|        Upload a file to an S3 bucket                                  |
-|                                                                       |
-|        :param file_name: File to upload                               |
-|        :param bucket: Bucket to upload to                             |
-|        :param                                                         |
-|  object_name: S3 object name. If not specified then file_name is used |
-|        :return: True if file was uploaded, else False                 |
-|        """                                                            |
-|                                                                       |
-|        # If S3 object_name was not specified, use file_name           |
-|                                                                       |
-|        if object_name is None:                                        |
-|            object_name = file_name                                    |
-|                                                                       |
-|        # Upload the file                                              |
-|        s3_client = boto3.client('s3')                                 |
-|        try:                                                           |
-|                                                                       |
-|      response = s3_client.upload_file(file_name, bucket, object_name) |
-|        except ClientError as e:                                       |
-|            logging.error(e)                                           |
-|            return False                                               |
-|        return True                                                    |
-|                                                                       |
-|    try:                                                               |
-|        bname = sys.argv[2]                                            |
-|    except IndexError:                                                 |
-|        bname = default_bucket                                         |
-|                                                                       |
-|    upload_file(sys.argv[1], bname)                                    |
-+-----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| ::                                                                                              |
+|                                                                                                 |
+|    #!/usr/bin/env python                                                                        |
+|                                                                                                 |
+|    # Usage: ./upload_file file_name [bucket_name]                                               |
+|                                                                                                 |
+|    # from https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html |
+|                                                                                                 |
+|    default_bucket = 'uiuc-ncsa-bluewaters-rmokos-test'                                          |
+|                                                                                                 |
+|    import sys                                                                                   |
+|    import logging                                                                               |
+|    import boto3                                                                                 |
+|    from botocore.exceptions import ClientError                                                  |
+|                                                                                                 |
+|    def upload_file(file_name, bucket, object_name=None):                                        |
+|        """                                                                                      |
+|        Upload a file to an S3 bucket                                                            |
+|                                                                                                 |
+|        :param file_name: File to upload                                                         |
+|        :param bucket: Bucket to upload to                                                       |
+|        :param object_name: S3 object name. If not specified then file_name is used              |
+|        :return: True if file was uploaded, else False                                           |
+|        """                                                                                      |
+|                                                                                                 |
+|        # If S3 object_name was not specified, use file_name                                     |
+|                                                                                                 |
+|        if object_name is None:                                                                  |
+|            object_name = file_name                                                              |
+|                                                                                                 |
+|        # Upload the file                                                                        |
+|        s3_client = boto3.client('s3')                                                           |
+|        try:                                                                                     |
+|            response = s3_client.upload_file(file_name, bucket, object_name)                     |
+|        except ClientError as e:                                                                 |
+|            logging.error(e)                                                                     |
+|            return False                                                                         |
+|        return True                                                                              |
+|                                                                                                 |
+|    try:                                                                                         |
+|        bname = sys.argv[2]                                                                      |
+|    except IndexError:                                                                           |
+|        bname = default_bucket                                                                   |
+|                                                                                                 |
+|    upload_file(sys.argv[1], bname)                                                              |
++-------------------------------------------------------------------------------------------------+
 
 **download_file.py - download a file from a bucket**
 ----------------------------------------------------
@@ -228,56 +223,53 @@ Usage: ./bucket_list.py
 | Be sure to set default_bucket in the script to the name of the bucket
   that you want to be your default.
 
-+-----------------------------------------------------------------------+
-| ::                                                                    |
-|                                                                       |
-|    #!/usr/bin/env python                                              |
-|                                                                       |
-|    # Usage: ./download_file file_name [bucket_name]                   |
-|                                                                       |
-|    # from https://boto3.amazonaw                                      |
-| s.com/v1/documentation/api/latest/guide/s3-example-download-file.html |
-|                                                                       |
-|    default_bucket = 'uiuc-ncsa-bluewaters-rmokos-test'                |
-|                                                                       |
-|    import sys                                                         |
-|    import logging                                                     |
-|    import boto3                                                       |
-|    from botocore.exceptions import ClientError                        |
-|                                                                       |
-|    def download_file(file_name, bucket, dest_file_name):              |
-|        """                                                            |
-|        Download a file from an S3 bucket                              |
-|                                                                       |
-|        :param file_name: File to download (S3 object name)            |
-|                                                                       |
-|        :param bucket: Bucket to download from                         |
-|        :param dest_file_name: Name to                                 |
-| use for the downloaded file. If not specified, then file_name is used |
-|        :return: True if file was downloaded, else False               |
-|        """                                                            |
-|                                                                       |
-|        # If dest_file_name was not specified, use file_name           |
-|        if dest_file_name is None:                                     |
-|            dest_file_name = file_name                                 |
-|                                                                       |
-|        # Download the file                                            |
-|        s3_client = boto3.client('s3')                                 |
-|        try:                                                           |
-|                                                                       |
-| response = s3_client.download_file(bucket, file_name, dest_file_name) |
-|        except ClientError as e:                                       |
-|            logging.error(e)                                           |
-|            return False                                               |
-|        return True                                                    |
-|                                                                       |
-|    try:                                                               |
-|        bname = sys.argv[2]                                            |
-|    except IndexError:                                                 |
-|        bname = default_bucket                                         |
-|                                                                       |
-|    download_file(sys.argv[1], bname, sys.argv[1])                     |
-+-----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+| ::                                                                                                          |
+|                                                                                                             |
+|    #!/usr/bin/env python                                                                                    |
+|                                                                                                             |
+|    # Usage: ./download_file file_name [bucket_name]                                                         |
+|                                                                                                             |
+|    # from https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-download-file.html       |
+|                                                                                                             |
+|    default_bucket = 'uiuc-ncsa-bluewaters-rmokos-test'                                                      |
+|                                                                                                             |
+|    import sys                                                                                               |
+|    import logging                                                                                           |
+|    import boto3                                                                                             |
+|    from botocore.exceptions import ClientError                                                              |
+|                                                                                                             |
+|    def download_file(file_name, bucket, dest_file_name):                                                    |
+|        """                                                                                                  |
+|        Download a file from an S3 bucket                                                                    |
+|                                                                                                             |
+|        :param file_name: File to download (S3 object name)                                                  |
+|                                                                                                             |
+|        :param bucket: Bucket to download from                                                               |
+|        :param dest_file_name: Name to use for the downloaded file. If not specified, then file_name is used |
+|        :return: True if file was downloaded, else False                                                     |
+|        """                                                                                                  |
+|                                                                                                             |
+|        # If dest_file_name was not specified, use file_name                                                 |
+|        if dest_file_name is None:                                                                           |
+|            dest_file_name = file_name                                                                       |
+|                                                                                                             |
+|        # Download the file                                                                                  |
+|        s3_client = boto3.client('s3')                                                                       |
+|        try:                                                                                                 |
+|            response = s3_client.download_file(bucket, file_name, dest_file_name)                            |
+|        except ClientError as e:                                                                             |
+|            logging.error(e)                                                                                 |
+|            return False                                                                                     |
+|        return True                                                                                          |
+|                                                                                                             |
+|    try:                                                                                                     |
+|        bname = sys.argv[2]                                                                                  |
+|    except IndexError:                                                                                       |
+|        bname = default_bucket                                                                               |
+|                                                                                                             |
+|    download_file(sys.argv[1], bname, sys.argv[1])                                                           |
++-------------------------------------------------------------------------------------------------------------+
 
 Hydro <=> AWS Transfer Rates
 ============================
